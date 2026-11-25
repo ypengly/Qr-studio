@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  @apply bg-ink-50 font-sans text-ink-800 antialiased;
+  background-image:
+    radial-gradient(1200px 500px at 85% -10%, rgba(109, 87, 245, 0.10), transparent 60%),
+    radial-gradient(900px 400px at -10% 0%, rgba(56, 189, 248, 0.08), transparent 60%);
+  background-attachment: fixed;
+}
+
+@layer components {
+  .card {
+    @apply rounded-2xl border border-ink-100 bg-white shadow-soft;
+  }
+  .label {
+    @apply mb-1.5 block text-xs font-semibold uppercase tracking-wide text-ink-500;
+  }
+  .input {
+    @apply w-full rounded-xl border border-ink-200 bg-white px-3.5 py-2.5 text-sm text-ink-900 shadow-sm outline-none transition placeholder:text-ink-300 focus:border-brand-400 focus:ring-4 focus:ring-brand-100;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-brand-200 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .btn-primary {
+    @apply btn bg-gradient-to-b from-brand-500 to-brand-700 text-white shadow-md shadow-brand-600/25 hover:from-brand-400 hover:to-brand-600 active:scale-[0.98];
+  }
+  .btn-secondary {
+    @apply btn border border-ink-200 bg-white text-ink-700 shadow-sm hover:border-ink-300 hover:bg-ink-50 active:scale-[0.98];
+  }
+  .btn-ghost {
+    @apply btn text-ink-600 hover:bg-ink-100;
+  }
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-semibold transition;
+  }
+  .section-title {
+    @apply mb-3 flex items-center gap-2 text-sm font-bold text-ink-900;
+  }
+}
+
+.checker {
+  background-color: #fff;
+  background-image:
+    linear-gradient(45deg, #ececf5 25%, transparent 25%),
+    linear-gradient(-45deg, #ececf5 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #ececf5 75%),
+    linear-gradient(-45deg, transparent 75%, #ececf5 75%);
+  background-size: 16px 16px;
+  background-position: 0 0, 0 8px, 8px -8px, -8px 0;
+}
+
+input[type='color'] {
+  -webkit-appearance: none;
+  appearance: none;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+input[type='color']::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+input[type='color']::-webkit-color-swatch {
+  border: 1px solid rgba(20, 20, 31, 0.12);
+  border-radius: 10px;
+}
+input[type='color']::-moz-color-swatch {
+  border: 1px solid rgba(20, 20, 31, 0.12);
+  border-radius: 10px;
+}
+
+input[type='range'] {
+  @apply h-1.5 w-full cursor-pointer appearance-none rounded-full bg-ink-100 accent-brand-600;
+}
+
+.scroll-thin::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+.scroll-thin::-webkit-scrollbar-thumb {
+  background: #d4d4e6;
+  border-radius: 8px;
+}
